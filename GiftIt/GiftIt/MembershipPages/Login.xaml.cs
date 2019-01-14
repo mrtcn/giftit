@@ -15,5 +15,7 @@ namespace GiftIt.MembershipPages
         {
             await Navigation.PushAsync(new ForgotPassword());
         }
+
+
     }
 }

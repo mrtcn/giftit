@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GiftIt.MembershipPages.Login"
-             xmlns:local="clr-namespace:GiftIt.Effects">
+             xmlns:local="clr-namespace:GiftIt.Effects"
+             xmlns:Behaviors="clr-namespace:GiftIt.Validation"
+             xmlns:Validators="clr-namespace:GiftIt.Validation">
     <ContentPage.Content>
         <Grid RowSpacing="0">
             <Grid.RowDefinitions>
@@ -24,7 +26,18 @@
                     Placeholder="Enter your username"
                     FontSize="14"
                     PlaceholderColor="#b4adad" 
-                    Margin="30, 0, 30, 0"/>
+                    Margin="30, 0, 30, 0">
+                    <Entry.Behaviors>
+                        <Behaviors:ValidationBehavior PropertyName="Text" x:Name="FormValidator">
+                            <Behaviors:ValidationBehavior.Validators>
+                                <Validators:RequiredValidator />
+                                <Validators:FormatValidator
+                                ValidationMessage="Mobile number must be 10 digit" 
+                                Format="^[0-9]{10}$" />
+                            </Behaviors:ValidationBehavior.Validators>
+                        </Behaviors:ValidationBehavior>
+                    </Entry.Behaviors>
+                </Entry>
 
                 <Label 
                     TextColor="#2e2e2e" 
@@ -62,7 +75,20 @@
                     BackgroundColor="#3f88fb"  
                     HeightRequest="50"
                     Margin="30, 0, 30, 20"
-                    VerticalOptions="EndAndExpand" />
+                    VerticalOptions="EndAndExpand">
+                    <!--<Button.Triggers>
+                        <DataTrigger TargetType="Button"
+                                     Binding="{Binding Source={x:Reference FormValidator}, Path=IsValidated}"
+                                     Value="True">
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </DataTrigger>
+                        <DataTrigger TargetType="Button"
+                                     Binding="{Binding Source={x:Reference FormValidator}, Path=IsValidated}"
+                                     Value="False">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Button.Triggers>-->
+                </Button>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

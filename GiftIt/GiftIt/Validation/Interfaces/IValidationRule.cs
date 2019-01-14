@@ -1,9 +1,9 @@
 ﻿
 namespace GiftIt.Validation
 {
-    public interface IValidationRule<T>
+    public interface IValidationRule
     {
         string ValidationMessage { get; set; }
-        bool Check(T value);
+        bool Check(string value);
     }
 }
