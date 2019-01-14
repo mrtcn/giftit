@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GiftIt.MembershipPages.Account"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="52*"></RowDefinition>
+                <RowDefinition Height="48*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Image HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Scale="2" Aspect="AspectFit" Source="Group_88.png" />
+            </StackLayout>
+            <StackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Button 
+                    Text="Giriş Yap"
+                    TextColor="White"
+                    BackgroundColor="#3f88fb"  
+                    HeightRequest="50"
+                    Margin="30, 0, 30, 20"
+                    Clicked="Login_Clicked"/>
+                <Button 
+                    Text="Hesap Oluştur"
+                    TextColor="#3f88fb"                    
+                    BorderColor="#3f88fb"
+                    BorderWidth="2"
+                    BackgroundColor="#ffffff"
+                    HeightRequest="50"
+                    Margin="30, 0, 30, 20"
+                    Clicked="RegistrationButton_Clicked"/>
+                <StackLayout Orientation="Horizontal">
+                    <BoxView
+                        Color="#3f88fb" 
+                        HeightRequest="1" 
+                        WidthRequest="120"
+                        VerticalOptions="CenterAndExpand" 
+                        Margin="30, 0, 5, 0"/>
+                    <Label TextColor="#3f88fb" Text="ya da"/>
+                    <BoxView 
+                        Color="#3f88fb" 
+                        HeightRequest="1" 
+                        WidthRequest="120"
+                        VerticalOptions="CenterAndExpand"
+                        Margin="5, 0, 30, 0"/>
+                </StackLayout>
+                <ImageButton
+                    HorizontalOptions="Center"
+                    BackgroundColor="White"
+                    Scale="2"
+                    Source="fb_icon.png"
+                    Margin="30, 20, 30, 20"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
